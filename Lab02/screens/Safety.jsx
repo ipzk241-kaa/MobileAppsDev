@@ -1,18 +1,29 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, StyleSheet } from "react-native";
+import TabMenu from "../components/TabMenu";
+import Guard from "../components/Guard";
+import Confirmation from "../components/Confirmation";
+import CustomHeader from "../components/Header";
 import { useTheme } from "../config/ThemeContext";
-import CustomHeader from "../components/CustomHeader";
 
 const Safety = () => {
   const { theme } = useTheme();
-
+  const tabs = [
+    {
+      id: "Guard",
+      label: "Guard",
+      component: <Guard />,
+    },
+    {
+      id: "Confirmations",
+      label: "Confirmations",
+      component: <Confirmation />,
+    },
+  ];
   return (
     <View style={[styles.container, { backgroundColor: theme.background }]}>
-      <CustomHeader title={"Store"} />
-      <Text style={styles.description}>
-        This is the Safety screen. Here you can find information about safety
-        measures and guidelines.
-      </Text>
+      <CustomHeader title="Safety" />
+      <TabMenu tabs={tabs} />
     </View>
   );
 };

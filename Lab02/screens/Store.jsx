@@ -1,11 +1,11 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import CustomHeader from "../components/CustomHeader";
+import CustomHeader from "../components/Header";
 import { useTheme } from "../config/ThemeContext";
 import PopularGamesList from "../components/PopularGamesList";
 import { popularGames, games } from "../assets/GamesData";
 import { gamesFilters } from "../assets/FiltersData";
-import GamesList from "../components/GameList";
+import GamesList from "../components/GamesList";
 import FilterBar from "../components/FilterBar";
 
 const Store = () => {

@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import CustomHeader from "../components/CustomHeader";
+import CustomHeader from "../components/Header";
 import { useTheme } from "../config/ThemeContext";
 import FilterBar from "../components/FilterBar";
 import { newsFilters } from "../assets/FiltersData";
@@ -12,8 +12,8 @@ const Community = () => {
 
   return (
     <View style={[styles.container, { backgroundColor: theme.background }]}>
-            <CustomHeader
-        title={"Store"}
+      <CustomHeader
+        title={"Community"}
         description={
           "Community and official content for all games and software"
         }
