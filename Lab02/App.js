@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { ThemeProvider } from "./config/ThemeContext";
 import Navigation from "./components/Navigation";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { MenuProvider } from "react-native-popup-menu";
 
 const Tab = createBottomTabNavigator();
 
@@ -27,9 +28,11 @@ export default function App() {
 
   return (
     <ThemeProvider>
-      <GestureHandlerRootView style={{ flex: 1 }}>
-        <Navigation Tab={Tab}></Navigation>
-      </GestureHandlerRootView>
+     <MenuProvider>
+        <GestureHandlerRootView style={{ flex: 1 }}>
+          <Navigation Tab={Tab}></Navigation>
+        </GestureHandlerRootView>
+      </MenuProvider>
     </ThemeProvider>
   );
 }

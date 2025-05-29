@@ -2,15 +2,24 @@ import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import CustomHeader from "../components/CustomHeader";
 import { useTheme } from "../config/ThemeContext";
-import { ScrollView } from "react-native-gesture-handler";
+import FilterBar from "../components/FilterBar";
+import { newsFilters } from "../assets/FiltersData";
+import { communityContent } from "../assets/NewsData";
+import CommunityContentCardsList from "../components/CommunityContentCardsList";
 
 const Community = () => {
   const { theme } = useTheme();
 
   return (
     <View style={[styles.container, { backgroundColor: theme.background }]}>
-      <CustomHeader title={"Store"} />
-      <ScrollView contentContainerStyle={styles.scrollContainer}></ScrollView>
+            <CustomHeader
+        title={"Store"}
+        description={
+          "Community and official content for all games and software"
+        }
+      />
+      <FilterBar filters={newsFilters} onSelect={() => {}} showSearch={true} />
+      <CommunityContentCardsList news={communityContent} />
     </View>
   );
 };
@@ -18,20 +27,6 @@ const Community = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
-  scrollContainer: {
-    flexGrow: 1, 
-    padding: 20,
-  },
-  content: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  text: {
-    fontSize: 20,
-    color: "#333",
-    marginBottom: 10, 
   },
 });
 

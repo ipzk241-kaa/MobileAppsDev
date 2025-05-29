@@ -5,7 +5,7 @@ import { useTheme } from "../config/ThemeContext";
 import PopularGamesList from "../components/PopularGamesList";
 import { popularGames, games } from "../assets/GamesData";
 import { gamesFilters } from "../assets/FiltersData";
-import GameList from "../components/GameList";
+import GamesList from "../components/GameList";
 import FilterBar from "../components/FilterBar";
 
 const Store = () => {
@@ -16,7 +16,7 @@ const Store = () => {
       <View>
         <PopularGamesList games={popularGames} />
         <FilterBar filters={gamesFilters} onSelect={() => {}} />
-        <GameList games={games}></GameList>
+        <GamesList games={games}></GamesList>
       </View>
     </View>
   );
