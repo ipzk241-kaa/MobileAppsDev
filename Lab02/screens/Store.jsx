@@ -2,13 +2,22 @@ import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import CustomHeader from "../components/CustomHeader";
 import { useTheme } from "../config/ThemeContext";
+import PopularGamesList from "../components/PopularGamesList";
+import { popularGames, games } from "../assets/GamesData";
+import { gamesFilters } from "../assets/FiltersData";
+import GameList from "../components/GameList";
+import FilterBar from "../components/FilterBar";
 
 const Store = () => {
   const { theme } = useTheme();
   return (
     <View style={[styles.container, { backgroundColor: theme.background }]}>
       <CustomHeader title={"Store"} isSearchEnabled={true} />
-      <Text style={styles.title}>Welcome to the Store</Text>
+      <View>
+        <PopularGamesList games={popularGames} />
+        <FilterBar filters={gamesFilters} onSelect={() => {}} />
+        <GameList games={games}></GameList>
+      </View>
     </View>
   );
 };
